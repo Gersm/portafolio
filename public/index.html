@@ -5,11 +5,50 @@
     <meta name="description" content="Portafolio de Gersom Alaja">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Gersom - Portafolio</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>hola soy un titulo</h1>
-    <p>esto es un parafo</p>
+    <header class="Header">
+      <figure class="Person"><img src="img/avatar.jpg" class="Person__avatar"></figure>
+      <div class="Header__data">
+        <ul class="List">
+          <li class="List__element">gersom alaja</li>
+        </ul>
+      </div>
+    </header>
+    <section class="Skills">
+      <ul class="Skills--firsts">
+        <li class="Skills__element">html5</li>
+        <li class="Skills__element">css3</li>
+        <li class="Skills__element">javascript</li>
+        <li class="Skills__element">jquery</li>
+      </ul>
+    </section>
+    <section class="Work">
+      <article class="Work__element"><img src="img/image1.jpg" class="Work__image">
+        <p>description of the website</p>
+      </article>
+      <article class="Work__element"><img src="img/image1.jpg" class="Work__image">
+        <p>description of the website</p>
+      </article>
+      <article class="Work__element"><img src="img/image1.jpg" class="Work__image">
+        <p>description of the website</p>
+      </article>
+    </section>
+    <footer class="Footer">
+      <form class="Form">
+        <label for="name" class="Form__label">nombre</label>
+        <input id="name" type="text" class="Form__input">
+        <label for="email" class="Form__label">e-m@il</label>
+        <input id="email" type="email" class="Form__input">
+        <label for="reason" class="Form__label">motivo</label>
+        <textarea id="reason" class="From__textarea"></textarea>
+        <button class="From__input">Enviar</button>
+      </form>
+      <div class="Credits">
+        <p class="Credits__description">2015 Gersom Portafolio. Todos los derechos no reservados.</p>
+      </div>
+    </footer>
   </body>
 </html>

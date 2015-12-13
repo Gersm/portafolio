@@ -1,0 +1,11 @@
+* {
+  background: $light-blue;
+  color: #fff;
+}
+.Person {
+  width: 150px;
+  height: 150px;
+}
+.Person__avatar {
+  width: 100%;
+}
