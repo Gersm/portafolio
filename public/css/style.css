@@ -194,12 +194,18 @@ th {
 .Header .Person__avatar {
   width: 100%;
 }
+.Header__navegation .List {
+  padding-left: 0;
+}
 .Header__navegation .List>li {
   list-style: none;
 }
 .Header__navegation .List>li a {
   display: block;
   text-decoration: none;
+}
+.Header__data .List {
+  padding-left: 0;
 }
 .Header__data .List>li {
   list-style: none;
