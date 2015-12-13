@@ -34,14 +34,14 @@ texto($tmp1 = "mayuscula", $tmp2 = "negrita", $tmp3 = "normal")
 
 // poner borde, sin fondo y no selecionable
 btn()
-   background: rgba($color2, 0.1);
-   border-radius: $borde-radio;
-   border: $borde-grozor solid rgba($borde-color, 0.4);
-   color: $color2;
-   margin: 1rem 0;
-   font-size: 0.9rem;
-   padding: 0.3rem 0.5rem;
-   outline: none;
+   background rgba($color2, 0.1)
+   border-radius $borde-radio
+   border $borde-grozor solid rgba($borde-color, 0.4)
+   color $color2
+   margin 1rem 0
+   font-size 1rem
+   padding 0.3rem 0.5rem
+   outline none
 
 // no se pueda selecionar el texto
 noseleccion()
@@ -82,7 +82,7 @@ margen($top = null, $right = null, $bottom = null, $left = null)
       margin-left $left
 
 // poner los paddings
-padding($top = null, $right = null, $bottom = null, $left = null)
+padin($top = null, $right = null, $bottom = null, $left = null)
    if $top
       padding-top $top
    if $right
