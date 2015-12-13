@@ -1,16 +1,20 @@
 // variables
-measure = 150
+$measure = 150
 
 // bloque de encabezado
 .Header
    .Person
-     width unit(measure,"px")
-     height unit(measure,"px")
+     width unit($measure,"px")
+     height unit($measure,"px")
    .Person__avatar
       width 100%
 .Header__navegation
    .List
       lista()
+
 .Header__data
    .List
       lista()
+
+[class*="aloneBorder"]
+   btn()

@@ -1,18 +1,20 @@
-flexbox($direccion = row, $alineacion = center, $justificar = center, $wrap = nowrap)
+// propiedad flexbox
+flexbox($direccion = row, $justificar = center, $alineacion = center, $wrap = nowrap)
    display: flex
    flex-direction: $direccion
    align-items: $alineacion
    justify-content: $justificar
    flex-wrap: $wrap
 
+// quitar viñetas y el sub rayado
 lista()
-   li
-   list-style: none
-   a
-   display: block
-   text-decoration: none
+   &>li
+      list-style: none
+      a
+         display: block
+         text-decoration: none
 
-
+// cambiar el texto a mayuscula entre otros
 texto($tmp1 = "mayuscula", $tmp2 = "negrita", $tmp3 = "normal")
 
    if $tmp1 == "mayuscula" or $tmp2 == "mayuscula" or $tmp3 == "mayuscula"
@@ -30,8 +32,19 @@ texto($tmp1 = "mayuscula", $tmp2 = "negrita", $tmp3 = "normal")
    if $tmp1 == "negrita" or $tmp2 == "negrita" or $tmp3 == "negrita"
       font-weight: bold
 
+// poner borde, sin fondo y no selecionable
+btn()
+   background: rgba($color2, 0.1);
+   border-radius: $borde-radio;
+   border: $borde-grozor solid rgba($borde-color, 0.4);
+   color: $color2;
+   margin: 1rem 0;
+   font-size: 0.9rem;
+   padding: 0.3rem 0.5rem;
+   outline: none;
 
-noselection()
+// no se pueda selecionar el texto
+noseleccion()
    &,&:focus
       -webkit-touch-callout none
       -webkit-user-select none
@@ -41,3 +54,177 @@ noselection()
       user-select none
       //   necesario para Internet Explorer
       outline-style none
+
+// degradado
+degradado($color1, $color2 = null, $strength = 10%)
+   // shift args if one color mode
+   if (typeof($color2) is 'unit')
+      $strength = $color2
+      $color2 = null
+
+   $start = $color2 ? $color1 : lighten($color1, $strength)
+   $end = $color2 ? $color2 : darken($color1, $strength)
+   background $start
+   background $end linear-gradient(180deg, $start, $end) repeat-x
+
+
+
+// -------- CON DIRECIONES---------------
+// poner los magins
+margen($top = null, $right = null, $bottom = null, $left = null)
+   if $top
+      margin-top $top
+   if $right
+      margin-right $right
+   if $bottom
+      margin-bottom $bottom
+   if $left
+      margin-left $left
+
+// poner los paddings
+padding($top = null, $right = null, $bottom = null, $left = null)
+   if $top
+      padding-top $top
+   if $right
+      padding-right $right
+   if $bottom
+      padding-bottom $bottom
+   if $left
+      padding-left $left
+
+// poner las posiciones
+posicion($posicion = relative, $top = null, $right = null, $bottom = null, $left = null)
+   position $posicion
+   if $top
+      top $top
+   if $right
+      right $right
+   if $bottom
+      bottom $bottom
+   if $left
+      left $left
+
+
+
+// EFECTOS DE CLICK EN BOTON
+// click abajo
+click-down($distance = 1px)
+   &:active
+      transform: translateY($distance)
+
+// click sombra interna
+click-inset($radius = 20px)
+   $distance = $radius / 2
+   &:active
+      box-shadow: inset 0px $distance $radius rgba(0, 0, 0, 0.35);
+
+// click empequeñecer
+click-shrink($distance = .92)
+   &:active
+      transform: scale($distance)
+
+
+
+
+// INPUT RANGE
+
+// Mixin: Range
+//
+// A clean, cross-browser styling reset for range inputs.
+// Note: range inputs are not supported in IE9 and below.
+// http://caniuse.com/#feat=input-range
+//
+// ex. range()
+// ex. range: tomato 200px 15px 9px #333
+
+// AHORA ESPAÑOL
+// 1ro el color del circulo
+// 2el ancho
+// 3ro tamaño del circulo
+// 4to grozor de la linea
+// 5to color de la linea
+
+range($color = #0074d9, $track-width = 100%, $thumb-size = 2em, $track-height = .5em, $track-color = rgba(#000, .1))
+   -webkit-appearance: none
+   width: $track-width
+   margin: 0
+   outline: none
+   background: transparent
+
+   &::-webkit-slider-runnable-track
+      background: $track-color
+      border: none
+      border-radius: $track-height
+      height: $track-height
+      width: $track-width
+
+   &::-webkit-slider-thumb
+      -webkit-appearance: none
+      border: none
+      height: $thumb-size
+      width: $thumb-size
+      border-radius: 50%
+      background: $color
+      margin-top: "calc(-%s / 2 + %s / 2)" % ($thumb-size $track-height)
+      transition: all 0.2s ease
+
+      &:hover
+         transform: scale(1.2)
+         cursor: pointer
+
+      &:active
+         background: darken($color, 15%)
+
+   &:focus
+      outline: none
+
+   &:focus::-webkit-slider-runnable-track
+      background: $track-color
+
+   &::-moz-range-track
+      width: $track-width
+      height: $track-height
+      background: $track-color
+      border: none
+      border-radius: $track-height
+
+   &::-moz-range-thumb
+      border: none
+      height: $thumb-size
+      width: $thumb-size
+      border-radius: 50%
+      background: $color
+      transition: all 0.2s ease
+
+      &:hover
+         transform: scale(1.2)
+
+      &:active
+         background: darken($color, 15%)
+
+   &::-moz-focus-outer
+      border: 0
+
+   &::-ms-track
+      height: $track-height
+      width: $track-width
+      background: transparent
+      border-width: "calc(%s / 2 + %s / 2)" % ($thumb-size $track-height) 0
+      color: transparent;
+
+   &::-ms-fill-lower, &::-ms-fill-upper, &:focus::-ms-fill-lower, &:focus::-ms-fill-upper
+      background: $track-color
+      border-radius: 10px
+
+   &::-ms-thumb
+      border: none
+      height: 2em
+      width: 2em
+      border-radius: 50%
+      background: $color
+
+      &:active
+         background: darken($color, 15%)
+
+   &::-ms-tooltip
+      display: none

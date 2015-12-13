@@ -3,7 +3,6 @@ html {
   font-size: 16px;
   height: 100%;
   margin: 0;
-  padding: 0;
   width: 100%;
 }
 .Header .Person {
@@ -13,19 +12,30 @@ html {
 .Header .Person__avatar {
   width: 100%;
 }
-.Header__navegation .List {
-li
+.Header__navegation .List>li {
   list-style: none;
-a
+}
+.Header__navegation .List>li a {
   display: block;
   text-decoration: none;
 }
-.Header__data .List {
-li
+.Header__data .List>li {
   list-style: none;
-a
+}
+.Header__data .List>li a {
   display: block;
   text-decoration: none;
+}
+[class*="aloneBorder"] {
+  background: rgba(255,255,255,0.1);
+  border-radius: 0.3em;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: #fff;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  padding-top: 0.3rem;
+  padding-right: 0.5rem;
+  outline: none;
 }
 .Body {
   background: #56a8b0;
