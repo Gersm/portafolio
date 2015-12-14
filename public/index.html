@@ -7,6 +7,9 @@
     <title>Gersom - Portafolio</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/jquery-browser.js"></script>
+    <script src="js/border.js"></script>
   </head>
   <body class="Body">
     <header class="Header">
@@ -14,27 +17,47 @@
       <div class="Header__data">
         <ul class="List">
           <li class="List__element">gersom alaja</li>
+          <li class="List__element">
+            Front-End
+            
+          </li>
         </ul>
       </div>
       <nav class="Header__navegation">
         <div class="Dropdown">
-          <button type="submit" class="Dropdown--aloneBorder">menu</button>
-          <button type="submit" class="Dropdown--aloneBorder">x</button>
+          <button type="submit" class="Dropdown__btnmenu aloneBorder">           menu</button>
         </div>
         <ul class="List">
-          <li class="List__element"><a href="#">mis datos</a></li>
-          <li class="List__element"><a href="#">mis habilidades</a></li>
-          <li class="List__element"><a href="#">mis trabajos</a></li>
-          <li class="List__element"><a href="#">contáctame</a></li>
+          <li class="Btnx">
+            <button type="submit" class="Btnx__button aloneBorder">x</button>
+          </li>
+          <li class="List__menu List__link mayus">menu</li>
+          <li class="List__element"><a href="#" class="List__link cap">mis datos</a></li>
+          <li class="List__element"><a href="#" class="List__link cap">mis habilidades</a></li>
+          <li class="List__element"><a href="#" class="List__link cap">mis trabajos</a></li>
+          <li class="List__element"><a href="#" class="List__link cap">contáctame</a></li>
         </ul>
       </nav>
     </header>
     <section class="Skills">
-      <ul class="Skills--firsts">
+      <ul class="Skills_technologies">
         <li class="Skills__element">html5</li>
         <li class="Skills__element">css3</li>
         <li class="Skills__element">javascript</li>
         <li class="Skills__element">jquery</li>
+        <li class="Skills__element">ajax</li>
+      </ul>
+      <ul class="Skills__frameworks">
+        <li class="Skills__element">jade</li>
+        <li class="Skills__element">stylus</li>
+        <li class="Skills__element">sass</li>
+        <li class="Skills__element">scss</li>
+      </ul>
+      <ul class="Skills__methodologies">
+        <li class="Skills__element">responsive design</li>
+        <li class="Skills__element">mobile first design</li>
+        <li class="Skills__element">block element modifier</li>
+        <li class="Skills__element">mejora progresiva </li>
       </ul>
     </section>
     <section class="Work">

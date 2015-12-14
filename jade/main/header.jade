@@ -1,22 +1,31 @@
+//- bloque de Encabezamiento
 header.Header
+   //- bloque de Persona
    figure.Person
       img.Person__avatar(src="img/avatar.jpg")
+      
    div.Header__data
       ul.List
          li.List__element.
             gersom alaja
+         li.List__element.
+            Front-End
+   
    nav.Header__navegation
+      //- bloque Btn desplegable
       div.Dropdown
-         button.Dropdown--aloneBorder(type='submit').
-            menu
-         button.Dropdown--aloneBorder(type='submit').
-            x
+         button.Dropdown__btnmenu.aloneBorder(type='submit')            menu
+            
+      //- bloque Lista del .Header__navegation
       ul.List
-         li.List__element: a(href="#").
-            mis datos
-         li.List__element: a(href="#").
-            mis habilidades
-         li.List__element: a(href="#").
-            mis trabajos
-         li.List__element: a(href="#").
-            contáctame
+         li.Btnx
+            button.Btnx__button.aloneBorder(type='submit') x
+         li.List__menu.List__link.mayus menu
+         li.List__element
+            a.List__link.cap(href="#") mis datos
+         li.List__element
+            a.List__link.cap(href="#") mis habilidades
+         li.List__element
+            a.List__link.cap(href="#") mis trabajos
+         li.List__element
+            a.List__link.cap(href="#") contáctame

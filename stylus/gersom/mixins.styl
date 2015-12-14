@@ -7,17 +7,19 @@ flexbox($direccion = row, $justificar = center, $alineacion = center, $wrap = no
    flex-wrap: $wrap
 
 // quitar viñetas y el sub rayado
-lista()
-   &
-      padding-left 0
+lista($margen-izq = false)
+   if !$margen-izq
+      &
+         padding-left 0
    &>li
-      list-style: none
+      list-style none
       a
-         display: block
-         text-decoration: none
+         display block
+         height 100%
+         text-decoration none
 
 // cambiar el texto a mayuscula entre otros
-texto($tmp1 = "mayuscula", $tmp2 = "negrita", $tmp3 = "normal")
+texto($tmp1 = "mayuscula", $tmp2 = "normal", $tmp3 = "normal")
 
    if $tmp1 == "mayuscula" or $tmp2 == "mayuscula" or $tmp3 == "mayuscula"
       text-transform: uppercase
@@ -38,9 +40,8 @@ texto($tmp1 = "mayuscula", $tmp2 = "negrita", $tmp3 = "normal")
 btn()
    background rgba($color2, 0.1)
    border-radius $borde-radio
-   border $borde-grozor solid rgba($borde-color, 0.4)
+   border $borde-grozor solid $borde-color
    color $color2
-   margin 1rem 0
    font-size 1rem
    padding 0.3rem 0.5rem
    outline none
@@ -74,36 +75,36 @@ degradado($color1, $color2 = null, $strength = 10%)
 // -------- CON DIRECIONES---------------
 // poner los magins
 margen($top = null, $right = null, $bottom = null, $left = null)
-   if $top
+   if $top != null
       margin-top $top
-   if $right
+   if $right != null
       margin-right $right
-   if $bottom
+   if $bottom != null
       margin-bottom $bottom
-   if $left
+   if $left != null
       margin-left $left
 
 // poner los paddings
 padin($top = null, $right = null, $bottom = null, $left = null)
-   if $top
+   if $top != null
       padding-top $top
-   if $right
+   if $right != null
       padding-right $right
-   if $bottom
+   if $bottom != null
       padding-bottom $bottom
-   if $left
+   if $left != null
       padding-left $left
 
 // poner las posiciones
-posicion($posicion = relative, $top = null, $right = null, $bottom = null, $left = null)
-   position $posicion
-   if $top
+posicion($psc = relative, $top = null, $right = null, $bottom = null, $left = null)
+   position $psc
+   if $top != null
       top $top
-   if $right
+   if $right != null
       right $right
-   if $bottom
+   if $bottom != null
       bottom $bottom
-   if $left
+   if $left != null
       left $left
 
 

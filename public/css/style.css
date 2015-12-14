@@ -3,8 +3,8 @@ html {
   font-size: 16px;
   height: 100%;
   margin: 0;
-  padding: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -96,7 +96,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -155,9 +154,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
+  -webkit-appearance: textfield; /* 1 */ /* 2 */
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -187,12 +184,72 @@ td,
 th {
   padding: 0;
 }
-.Header .Person {
-  width: 150px;
-  height: 150px;
+.Header {
+  background: #e39458;
+  background: #df8642 -webkit-linear-gradient(270deg, #e39458, #df8642) repeat-x;
+  background: #df8642 linear-gradient(180deg, #e39458, #df8642) repeat-x;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 50%;
 }
-.Header .Person__avatar {
+.Header,
+.Header>* {
+  margin: 0;
+  padding: 0;
+}
+.Header__navegation {
   width: 100%;
+}
+.Header__navegation .Dropdown {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.Header__navegation .List {
+  background: #0074d9;
+  position: relative;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: none;
 }
 .Header__navegation .List {
   padding-left: 0;
@@ -202,7 +259,53 @@ th {
 }
 .Header__navegation .List>li a {
   display: block;
+  height: 100%;
   text-decoration: none;
+}
+.Header__navegation .List .Btnx {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.Header__navegation .List__menu {
+  border-bottom: 1px solid #fff;
+}
+.Header__navegation .List__element {
+  display: block;
+}
+.Header__navegation .List__element:hover {
+  background: rgba(255,255,255,0.2);
+}
+.Header__navegation .List__link {
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.Header__data {
+  color: #fff;
+}
+.Header__data .List {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  text-transform: capitalize;
 }
 .Header__data .List {
   padding-left: 0;
@@ -212,18 +315,37 @@ th {
 }
 .Header__data .List>li a {
   display: block;
+  height: 100%;
   text-decoration: none;
 }
-[class*="aloneBorder"] {
+.Person {
+  height: 150px;
+  overflow: hidden;
+  width: 150px;
+}
+.Person__avatar {
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+.aloneBorder {
   background: rgba(255,255,255,0.1);
-  border-radius: 0.35em;
-  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 0.35rem;
+  border: 0.15rem solid rgba(255,255,255,0.4);
   color: #fff;
-  margin: 1rem 0;
   font-size: 1rem;
   padding: 0.3rem 0.5rem;
   outline: none;
 }
-.Body {
-  background: #56a8b0;
+.cap {
+  text-transform: capitalize;
+}
+.mayus {
+  text-transform: uppercase;
+}
+.no-support-border .Person__avatar {
+  border: none;
+  border-radius: 75px;
 }
