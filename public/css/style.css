@@ -330,6 +330,70 @@ th {
   height: 100%;
   width: 100%;
 }
+.Skills {
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+.Skills__list {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  font-style: italic;
+  -webkit-transition: all 0.8s ease-in-out;
+          transition: all 0.8s ease-in-out;
+}
+.Skills__list {
+  padding-left: 0;
+}
+.Skills__list>li {
+  list-style: none;
+}
+.Skills__list>li a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+.Skills__i1 .Skills__list {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.Skills__i2 .Skills__list {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.Skills__i3 .Skills__list {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
 .aloneBorder {
   background: rgba(255,255,255,0.1);
   border-radius: 0.35rem;
